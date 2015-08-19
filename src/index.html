@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <title>HandBag - </title>
+
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="/assets/css/clean-blog.min.css">
+
+</head>
+<body ng-app="app" ng-controller="AppController as app">
+  <div ng-include='"templates/navbar.html"'></div>
+  <div ng-include='"templates/header.html"'></div>  
+  
+  <div ng-viewport>
+  	
+  </div>
+
+  <script src="/assets/libs/angular/angular.min.js"></script>
+  <script src="/assets/libs/router.es5.js"></script>
+
+  <script src="/app/app.module.js"></script>
+  <script src="/app/app.routes.js"></script>
+
+  <script src="/components/home/home.js"></script>
+  <script src="/components/classroom/classroom.js"></script>
+
+  <script src="/factory/classroomFactory.js"></script>
+</body>
+</html>
