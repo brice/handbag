@@ -1,0 +1,52 @@
+<!-- Form Starts Here -->
+ <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+        <!-- Task List Starts Here -->
+        <h2>Liste des compétences </h2>
+        <ul class="list-group" ng-show="skills.skillsList.length > 0">
+          <li class="list-group-item clearfix task" ng-repeat="skill in skills.skillsList"> 
+            <p class="lead">{{skill.category}} - {{skill.libelle}}</p>
+            <div>
+              <!-- <span class="pull-right">
+                <button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove" 
+                  ng-click="skills.deleteSkill($index)"></span></button>
+              </span>-->
+            </div>
+          </li>
+        </ul>
+        <!-- Task List Ends Here -->
+
+
+      <h2>Page d'ajout et d'édition des compétences</h2>
+
+      <form>
+      <div class="form">
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+              <label>Catégorie</label>
+              <input type="text" class="form-control" placeholder="Catégorie" ng-model="skills.category">
+              <p class="help-block text-danger"></p>
+          </div>
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+              <label>Libellé</label>
+              <input type="text" class="form-control" placeholder="Libellé" ng-model="skills.libelle">
+              <p class="help-block text-danger"></p>
+          </div>
+          <br/>
+          <div id="success"></div>
+          <div class="row">
+              <div class="form-group col-xs-12">
+                  <button type="submit" class="btn btn-default" ng-click="skills.saveSkill()">Ajout d'une compétense</button>
+              </div>
+          </div>
+
+        </div><!-- /input-group -->
+      </div>
+      </form>
+
+
+    </div>
+  </div>
+</div>
