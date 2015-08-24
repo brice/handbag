@@ -8,7 +8,10 @@
 - [ ] Affichage et édition d'une classe en particulier.
 - [ ] Découpage des données pour afficher les élèves d'une classe
 - [ ] Export des données.
-- [ ] Création d'un module de compétences avec affichage, création, édition des compétences 
+- [ ] Création d'un module de compétences avec :
+  - [x] affichage
+  - [x] création
+  - [ ] édition des compétences 
 
 
 ### Quelques infos sur le projet
