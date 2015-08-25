@@ -1,54 +1,30 @@
-// Just a reminder 
-// See http://time2hack.com/2014/12/browser-storage-and-angularjs.html for more information
-
 angular.module('app')
-  .factory('storage', ['$window', function($window){
-  	return {
- 			setLocal: function( key, value ){
+  .factory('storageFactory', ['$window', function($window){
+    return{
+      memorize: function(id, value) {
         try{
-          if( $window.Storage ){
-            $window.localStorage.setItem(key, value);
+          if ($window.Storage) {
+            $window.localStorage.setItem(id, $window.JSON.stringify(value));
             return true;
           } else {
-            return false;
+            return false
           }
-        } catch( error ){
-          console.error( error, error.message );
+        } catch (error) {
+          console.error( error, error.message);
         }
+        return false;
       },
-      getLocal: function( key ){
+      recall: function(id) {
         try{
-          if( $window.Storage ){
-            return $window.localStorage.setItem( key );
+          if ($window.Storage) {
+            return $window.JSON.parse($window.localStorage.getItem(id));
           } else {
             return false;
           }
-        } catch( error ){
-          console.error( error, error.message );
+        } catch (error) {
+          console.error( error, error.message);
         }
-      },
-      setSession: function( key, value ){
-        try{
-          if( $window.Storage ){
-            $window.sessionStorage.setItem( key, value );
-            return true;
-          } else {
-            return false;
-          }
-        } catch( error ){
-          console.error( error, error.message );
-        }
-      },
-      getSession: function( key ){
-        try{
-          if( $window.Storage ){
-            return $window.sessionStorage.setItem( key );
-          } else {
-            return false;
-          }
-        } catch( error ){
-          console.error( error, error.message );
-        }
+        return false;
       }
-  	}
+    }
   }]);

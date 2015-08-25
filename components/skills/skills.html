@@ -3,20 +3,20 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-        <!-- Task List Starts Here -->
-        <h2>Liste des compétences </h2>
-        <ul class="list-group" ng-show="skills.skillsList.length > 0">
-          <li class="list-group-item clearfix task" ng-repeat="skill in skills.skillsList"> 
-            <p class="lead">{{skill.category}} - {{skill.libelle}}</p>
-            <div>
-              <!-- <span class="pull-right">
-                <button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove" 
-                  ng-click="skills.deleteSkill($index)"></span></button>
-              </span>-->
-            </div>
-          </li>
-        </ul>
-        <!-- Task List Ends Here -->
+      <!-- Skills List Starts Here -->
+      <h2>Liste des compétences </h2>
+      <ul class="list-group" ng-show="skills.skillsList.length > 0">
+        <li class="list-group-item clearfix task" ng-repeat="skill in skills.skillsList"> 
+          <p class="lead">{{skill.category}} - {{skill.libelle}}</p>
+          <div>
+            <!-- <span class="pull-right">
+              <button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove" 
+                ng-click="skills.deleteSkill($index)"></span></button>
+            </span>-->
+          </div>
+        </li>
+      </ul>
+      <!-- Skills List Ends Here -->
 
 
       <h2>Page d'ajout et d'édition des compétences</h2>
