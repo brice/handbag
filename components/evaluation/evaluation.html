@@ -1,0 +1,16 @@
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      
+      <!-- Skills list starts Here -->
+      <h2>Fiche de {{evaluation.student}}</h2>
+      <ul class="list-group">
+        <li class="list-group-item clearfix task" ng-repeat="skill in evaluations.skills"> 
+          <p class="lead">{{skill.category}} - {{skill.libelle}}</p>
+        </li>
+      </ul>
+      <!-- Skills list Ends Here -->
+    </div>
+  </div>
+</div>
