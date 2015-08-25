@@ -2,19 +2,16 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <h2>Entrez les information de votre classe : </h2>
-
-      <form>
-        <p>
-        Identifiant de la classe <input type="text" ng-model="classroomEdit.classroomId">
-        </p>
-
-        <textarea ng-model="classroomEdit.studentsList">
-        </textarea>
-        <br/>
-        <button type="button" ng-click="classroom.save()">Sauvegarder la classe</button>
-      </form>
-
+      
+      <!-- Classroom Starts Here -->
+      <h2>Liste des élèves de {{classroomEdit.classroomId}}</h2>
+      <ul class="list-group">
+        <li class="list-group-item clearfix task" ng-repeat="value in classroomEdit.students"> 
+          {{value}}</a>
+        </li>
+      </ul>
+      <!-- Classrom Ends Here -->
+      
     </div>
   </div>
 </div>

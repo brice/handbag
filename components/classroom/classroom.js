@@ -3,7 +3,7 @@ angular.module('app.classroom', [])
 
 function ClassroomController(storageFactory) {
   this.storageFactory = storageFactory;
-  this.classrooms = []; 
+  this.classrooms = {}; 
 
   var classrooms = this.storageFactory.recall('classrooms');
 
@@ -15,6 +15,9 @@ function ClassroomController(storageFactory) {
 
 ClassroomController.prototype.save = function() {
   var students = this.studentsList.split("\n");
+  console.log(this.classroomId);
+  console.log(students);
   this.classrooms[this.classroomId] = students;
+  console.log(this.classrooms);
   this.storageFactory.memorize('classrooms', this.classrooms);
 };
