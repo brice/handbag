@@ -148,6 +148,12 @@ hr.small {
   padding: 100px 0 50px;
   color: white;
 }
+
+.intro-header .compact-heading {
+  padding: 0;
+  color: white;
+}
+
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading,
   .intro-header .post-heading,
@@ -155,6 +161,13 @@ hr.small {
     padding: 150px 0;
   }
 }
+
+@media only screen and (min-width: 768px) {
+  .intro-header .compact-heading {
+    padding: 30px 0;
+  }
+}
+
 .intro-header .site-heading,
 .intro-header .page-heading {
   text-align: center;
