@@ -1,3 +1,4 @@
+<div ng-include='"templates/header.html"'></div>
 <!-- Main Content -->
 <div class="container">
   <div class="row">
@@ -5,11 +6,22 @@
       
       <!-- Skills list starts Here -->
       <h2>Fiche de {{evaluation.student}}</h2>
-      <ul class="list-group">
-        <li class="list-group-item clearfix task" ng-repeat="skill in evaluations.skills"> 
-          <p class="lead">{{skill.category}} - {{skill.libelle}}</p>
-        </li>
-      </ul>
+      <table class="list-group">
+        <tr class="list-group-item clearfix task" ng-repeat="skill in evaluations.skills track by $index"> 
+          <td class="lead">{{skill.category}} - {{skill.libelle}}</td>
+          <td>
+            <form>
+              <label>Evaluation</label>
+                <input type="radio" ng-model="evaluations.color[$index]" value="red"/> Rouge
+                <input type="radio" ng-model="evaluations.color[$index]" value="yellow"/> Jaune
+                <input type="radio" ng-model="evaluations.color[$index]" value="green"/> Vert 
+              <label>Date</label>
+                <input type="text" ng-model="evaluations.date[$index]"> 
+                <button type="button" ng-click="evaluations.addEvaluation()">Ajouter une évaluation</button>
+            </form>
+        </td>
+      </tr>
+
       <!-- Skills list Ends Here -->
     </div>
   </div>

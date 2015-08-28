@@ -6,11 +6,15 @@
       
       <!-- Classroom Starts Here -->
       <h2>Liste des élèves de {{classroomEdit.classroomId}}</h2>
-      <ul class="list-group">
-        <li class="list-group-item clearfix task" ng-repeat="value in classroomEdit.students track by $index"> 
-          {{value}}</a>
-        </li>
-      </ul>
+
+      <table class="list-group">
+      <tr ng-repeat="(index, value) in classroomEdit.students track by $index" class="list-group-item clearfix task">
+        <td>{{value}}&nbsp;</td>
+        <td>
+          <a ng-link="evaluation({classroomId:classroomEdit.classroomId,studentId:index})">Evaluez-le!</a>
+        </td>
+      </tr>
+
       <!-- Classrom Ends Here -->
       
     </div>
