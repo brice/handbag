@@ -4,15 +4,21 @@
 ### Liste des features 
 
 - [x] Création d'un composant classroom pour enregistrer une classe dans le LocalStorage
-- [ ] Affichage de la liste des classes enregistrées.
-- [ ] Affichage et édition d'une classe en particulier.
-- [ ] Découpage des données pour afficher les élèves d'une classe
+- [x] Affichage de la liste des classes enregistrées.
+- [x] Affichage et édition d'une classe en particulier.
+- [x] Découpage des données pour afficher les élèves d'une classe
 - [ ] Export des données.
-- [ ] Création d'un module de compétences avec :
+- [ ] Import des données
+- [x] Création d'un module de compétences avec :
   - [x] affichage
   - [x] création
-  - [ ] édition des compétences 
-
+  - [x] édition des compétences 
+- [ ] Module d'évaluation avec
+  - [x] Liste de toutes les compétences
+  - [ ] Sélection d'un R/J/V
+  - [ ] Champ date
+  - [ ] Bouton validation qui prend en compte l'ensemble des compétences
+  - [ ] Si R/J/V pas sélectionner la compétence n'est pas évaluée
 
 ### Quelques infos sur le projet
 

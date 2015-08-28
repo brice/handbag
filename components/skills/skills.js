@@ -3,19 +3,19 @@ angular.module('app.skills', [])
 
 function SkillsController(storageFactory) {
   this.storageFactory = storageFactory;
-  this.skillsList = [];
+  this.skills = [];
 
   var skills = this.storageFactory.recall('skills');
 
   if (skills != false && skills != null) {
-    this.skillsList = skills;
+    this.skills = skills;
   }
   delete(skills);
 }
 
 SkillsController.prototype.saveSkill = function() {
   var skill = { category:this.category, libelle: this.libelle};
-  this.skillsList.push( skill );
-  this.storageFactory.memorize ('skills', this.skillsList );
+  this.skills.push( skill );
+  this.storageFactory.memorize ('skills', this.skills );
 };
 

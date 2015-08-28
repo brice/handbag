@@ -5,20 +5,25 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       
       <!-- Skills list starts Here -->
-      <h2>Fiche de {{evaluation.student}}</h2>
+      <h2>Evaluation de {{evaluation.student}}</h2>
       <table class="list-group">
-        <tr class="list-group-item clearfix task" ng-repeat="skill in evaluations.skills track by $index"> 
-          <td class="lead">{{skill.category}} - {{skill.libelle}}</td>
-          <td>
+        <tr class="list-group-item clearfix task" ng-repeat="skill in evaluation.skills track by $index"> 
+          <td class="col-lg-3">{{skill.category}} - {{skill.libelle}}</td>
+          <td class="col-lg-4">
             <form>
               <label>Evaluation</label>
-                <input type="radio" ng-model="evaluations.color[$index]" value="red"/> Rouge
-                <input type="radio" ng-model="evaluations.color[$index]" value="yellow"/> Jaune
-                <input type="radio" ng-model="evaluations.color[$index]" value="green"/> Vert 
+                <input type="radio" ng-model="evaluation.color[$index]" value="red"/> Rouge
+                <input type="radio" ng-model="evaluation.color[$index]" value="yellow"/> Jaune
+                <input type="radio" ng-model="evaluation.color[$index]" value="green"/> Vert 
+              <br/>
               <label>Date</label>
-                <input type="text" ng-model="evaluations.date[$index]"> 
-                <button type="button" ng-click="evaluations.addEvaluation()">Ajouter une évaluation</button>
+                <input type="text" ng-model="evaluation.date[$index]"> 
+                <button type="button" ng-click="evaluation.addEvaluation($index)">Ajouter une évaluation</button>
             </form>
+        </td>
+        <td class="col-lg-1">
+          <i class="fa fa-exclamation" ng-show="evaluation.error == $index"></i>
+          <i class="fa fa-check" ng-show="evaluation.check == $index"></i>
         </td>
       </tr>
 

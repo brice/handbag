@@ -28,7 +28,7 @@
       <!-- Classroom Starts Here -->
       <h2>Liste des classe</h2>
       <ul class="list-group">
-        <li class="list-group-item clearfix task" ng-repeat="(key, value) in classroom.classrooms track by index"> 
+        <li class="list-group-item clearfix task" ng-repeat="(key, value) in classroom.classrooms track by $index"> 
           <a ng-link="classroomEdit({classroomId:key})">{{key}} - {{value.length}} élèves</a>
           <div>
           </div>
