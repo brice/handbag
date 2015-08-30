@@ -1,5 +1,6 @@
 angular.module('app', [
 	'ngNewRouter', 
+	'slugifier',
 
 	'app.home', 
 	'app.classroom', 

@@ -34,8 +34,8 @@
       
       <!-- Skills List Starts Here -->
       <h2>Liste des compétences </h2>
-      <ul class="list-group" ng-show="skills.skills.length > 0">
-        <li class="list-group-item clearfix task" ng-repeat="skill in skills.skills"> 
+      <ul class="list-group" ng-show="skills.skills">
+        <li class="list-group-item clearfix task" ng-repeat="skill in skills.skills track by $index"> 
           <p class="lead">{{skill.category}} - {{skill.libelle}}</p>
           <div>
             <!-- <span class="pull-right">
