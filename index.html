@@ -3,10 +3,19 @@
 <head>
   <meta charset="utf-8">
   <title>HandBag - Evaluation des compétences</title>
-
+  
+  <!-- Bootstrap Core CSS -->
   <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
 
+  <!-- Custom CSS -->
   <link rel="stylesheet" type="text/css" href="./assets/css/clean-blog.css">
+
+  <!-- Custom Fonts -->
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Angular Material CSS  -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.css">
+
 
 </head>
 <body ng-app="app" ng-controller="AppController as app">
@@ -15,7 +24,10 @@
   <div ng-viewport></div>
 
   <script src="./assets/libs/angular/angular.min.js"></script>
+
   <script src="./assets/libs/router.es5.js"></script>
+
+  <script src="./assets/libs/angular-slugify.js"></script>
 
   <script src="./app/app.module.js"></script>
   <script src="./app/app.routes.js"></script>
@@ -24,7 +36,17 @@
   <script src="./components/classroom/classroom.js"></script>
   <script src="./components/classroom-edit/classroom-edit.js"></script>
   <script src="./components/skills/skills.js"></script>
+  <script src="./components/evaluation/evaluation.js"></script>
 
   <script src="./factory/storageFactory.js"></script>
+
+  <!-- Animate and aria on CDN for now -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-aria.min.js"></script>
+
+  <!-- Angular Material Javascript on CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.1/angular-material.min.js"></script>
+  
+  </body>
 </body>
 </html>

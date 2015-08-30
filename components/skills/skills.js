@@ -1,21 +1,17 @@
 angular.module('app.skills', [])
-  .controller('SkillsController', ['storageFactory', SkillsController]);
+  .controller('SkillsController', ['storageFactory', 'Slug', SkillsController]);
 
-function SkillsController(storageFactory) {
+function SkillsController(storageFactory, Slug) {
   this.storageFactory = storageFactory;
-  this.skillsList = [];
-
-  var skills = this.storageFactory.recall('skills');
-
-  if (skills != false && skills != null) {
-    this.skillsList = skills;
-  }
-  delete(skills);
+  this.Slug = Slug;
+  this.skills = this.storageFactory.recall('skills', {});
 }
 
 SkillsController.prototype.saveSkill = function() {
   var skill = { category:this.category, libelle: this.libelle};
-  this.skillsList.push( skill );
-  this.storageFactory.memorize ('skills', this.skillsList );
+  var index = this.Slug.slugify(this.category+' '+this.libelle);
+  this.skills[index] = skill;
+  console.log(this.skills);
+  this.storageFactory.memorize ('skills', this.skills );
 };
 

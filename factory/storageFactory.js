@@ -14,15 +14,19 @@ angular.module('app')
         }
         return false;
       },
-      recall: function(id) {
+      recall: function(id, defaultValue) {
         try{
           if ($window.Storage) {
-            return $window.JSON.parse($window.localStorage.getItem(id));
+            var value = $window.JSON.parse($window.localStorage.getItem(id));
+            if (undefined == defaultValue || (value != false && value != null)) {
+              return value;
+            }
+            return defaultValue;
           } else {
             return false;
           }
         } catch (error) {
-          console.error( error, error.message);
+          console.error(error, error.message);
         }
         return false;
       }
