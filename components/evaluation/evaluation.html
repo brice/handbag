@@ -7,27 +7,31 @@
       <!-- Skills list starts Here -->
       <h2>Evaluation de {{evaluation.student}}</h2>
       <form>
-      <label>Date </label> <input type="text" ng-model="evaluation.date"> 
-      <i class="fa fa-exclamation" ng-show="evaluation.error"></i>
-      <i class="fa fa-check" ng-show="evaluation.check"></i>
+      <div class="form">
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
 
-      <ul class="list-group">
-        <li class="list-group-item clearfix task" ng-repeat="(index, skill) in evaluation.skills track by $index"> 
-          {{skill.category}} - {{skill.libelle}}:
-          <br/>
-          <span>Evaluation</span>
-            <input type="radio" ng-model="evaluation.color[index]" value="red"/><label>Rouge</label>
-            <input type="radio" ng-model="evaluation.color[index]" value="yellow"/><label>Jaune</label>
-            <input type="radio" ng-model="evaluation.color[index]" value="green"/><label>Vert </label>
-            <input type="radio" ng-model="evaluation.color[index]" value="na"/><label>Non évalué</label>
-        </li>
-      </tr>
+            <label>Date </label> 
+            <input type="text" class="form-control" placeholder="Date de l'évaluation" ng-model="evaluation.date">
+            <i class="fa fa-exclamation" ng-show="evaluation.error"></i>
+            <i class="fa fa-check" ng-show="evaluation.check"></i>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item clearfix task" ng-repeat="(index, skill) in evaluation.skills track by $index"> 
+              {{skill.category}} - {{skill.libelle}}:
+                <input type="radio" ng-model="evaluation.color[index]" value="red"/><label>Rouge</label>
+                <input type="radio" ng-model="evaluation.color[index]" value="yellow"/><label>Jaune</label>
+                <input type="radio" ng-model="evaluation.color[index]" value="green"/><label>Vert </label>
+                <input type="radio" ng-model="evaluation.color[index]" value="na"/><label>Non évalué</label>
+            </li>
+          </ul>
 
       <button type="button" ng-click="evaluation.saveEvaluation()">Enregistrer les évaluations</button> 
       <i class="fa fa-check" ng-show="evaluation.check"></i>
       <i class="fa fa-exclamation" ng-show="evaluation.error"></i>
+      </div></div>
+      </div>
       </form>
-
       <!-- Skills list Ends Here -->
     </div>
   </div>

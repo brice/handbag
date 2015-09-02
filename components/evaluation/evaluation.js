@@ -6,9 +6,11 @@ function EvaluationController($routeParams, storageFactory) {
 
   this.classroomId = $routeParams.classroomId;
   this.studentId   = $routeParams.studentId;
-	
-  var classrooms = storageFactory.recall('classrooms');
 
+  /**
+   * @todo : Add this function in a separate provider
+   */	
+  var classrooms = storageFactory.recall('classrooms');
   this.student = classrooms[this.classroomId][this.studentId];
   if (undefined == this.student) {
     return false;
@@ -19,7 +21,6 @@ function EvaluationController($routeParams, storageFactory) {
 
   // Set default value
 	Object.keys(this.skills).map(function(id){
-    console.log(id);
 	  color[id] = 'na';
 	});
   this.color = color;
@@ -33,7 +34,6 @@ EvaluationController.prototype.saveEvaluation = function() {
 		this.error = true;
 		return false;
 	}
-  console.log(this.color);
 
 	var evaluations = this.evaluations;
 	var studentId = this.studentId;
