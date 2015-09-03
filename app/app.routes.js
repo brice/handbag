@@ -4,4 +4,5 @@ AppController.$routeConfig = [
   { path: '/classroom/:classroomId', component: 'classroomEdit' },
   { path: '/skills', component: 'skills' },
   { path: '/evaluation/:classroomId/:studentId', component: 'evaluation' },
+  { path: '/meeting', component: 'meeting' }
 ];

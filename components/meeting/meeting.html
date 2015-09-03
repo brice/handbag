@@ -1,0 +1,17 @@
+    <div ng-include='"templates/header.html"'></div>
+
+    <ul>
+      <li ng-repeat="message in meeting.messages">
+        <!-- edit a message -->
+        <input ng-model="message.text" ng-change="meeting.messages.$save(message)" />
+
+        <!-- delete a message -->
+        <button ng-click="meeting.messages.$remove(message)">Delete Message</button>
+      </li>
+    </ul>
+
+    <!-- push a new message onto the array -->
+    <form ng-submit="meeting.addMessage()">
+      <input ng-model="meeting.newMessageText" />
+      <button type="submit">Add Message</button>
+    </form>
