@@ -11,7 +11,6 @@ SkillsController.prototype.saveSkill = function() {
   var skill = { category:this.category, libelle: this.libelle};
   var index = this.Slug.slugify(this.category+' '+this.libelle);
   this.skills[index] = skill;
-  console.log(this.skills);
   this.storageFactory.memorize ('skills', this.skills );
 };
 

@@ -13,12 +13,13 @@
   - [x] affichage
   - [x] création
   - [x] édition des compétences 
-- [ ] Module d'évaluation avec
+- [x] Module d'évaluation avec
   - [x] Liste de toutes les compétences
-  - [ ] Sélection d'un R/J/V
-  - [ ] Champ date
-  - [ ] Bouton validation qui prend en compte l'ensemble des compétences
-  - [ ] Si R/J/V pas sélectionner la compétence n'est pas évaluée
+  - [x] Sélection d'un R/J/V
+  - [x] Champ date
+  - [x] Bouton validation qui prend en compte l'ensemble des compétences
+  - [x] Si R/J/V pas sélectionner la compétence n'est pas évaluée
+- [ ] Module d'affichage des évaluations
 
 ### Quelques infos sur le projet
 

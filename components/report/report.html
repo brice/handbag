@@ -1,0 +1,18 @@
+
+
+<table>
+<tr>
+<td>
+</td>
+<td ng-repeat="date in report.date">
+{{ date}}
+</td>
+</tr>
+<tr ng-repeat="(key, skill) in report.skills">
+<td>{{ skill.category }} - {{ skill.libelle }}</td>
+
+<td ng-repeat="color in report.studentEvaluation[key]">
+{{ color }}
+</td>
+</tr>
+</table>
