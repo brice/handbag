@@ -6,7 +6,8 @@ angular.module('app', [
 	'app.classroom', 
 	'app.classroomEdit', 
 	'app.skills',
-	'app.evaluation'
+	'app.evaluation',
+	'app.report'
 	])
   .controller('AppController', ['$router', AppController]);
 
