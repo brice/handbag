@@ -9,10 +9,11 @@
 </td>
 </tr>
 <tr ng-repeat="(key, skill) in report.skills">
-<td>{{ skill.category }} - {{ skill.libelle }}</td>
+<td>{{ key }} {{ skill.category }} - {{ skill.libelle }}</td>
 
-<td ng-repeat="color in report.studentEvaluation[key]">
-{{ color }}
+
+<td ng-repeat="evaluation in report.studentEvaluation">
+<span color="evaluation.color[key]">{{ evaluation.color[key] | libelleColor }}</span>
 </td>
 </tr>
 </table>

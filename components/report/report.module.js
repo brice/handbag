@@ -1,5 +1,5 @@
 (function(){
 
-angular.module('app.report', [])
+angular.module('app.report', ['handbagFilters'])
 
 })(angular)

@@ -1,4 +1,4 @@
-angular.module('app.skills', [])
+angular.module('app.skills', ['slugifier'])
   .controller('SkillsController', ['storageFactory', 'Slug', SkillsController]);
 
 function SkillsController(storageFactory, Slug) {

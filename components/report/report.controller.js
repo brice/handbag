@@ -21,7 +21,6 @@ function ReportController($routeParams, storageFactory, studentFactory) {
 
   vm.studentEvaluation = evaluations[vm.classroomId][vm.studentId];
 
-  console.log(vm.studentEvaluation);
   vm.date = vm.studentEvaluation.map(function(data) {
   	return data.date
   });

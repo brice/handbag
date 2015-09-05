@@ -11,7 +11,8 @@
       <tr ng-repeat="(index, value) in classroomEdit.students track by $index" class="list-group-item clearfix task">
         <td>{{value}}&nbsp;</td>
         <td>
-          <a ng-link="evaluation({classroomId:classroomEdit.classroomId,studentId:index})">Evaluez-le!</a>
+          <a ng-link="evaluation({classroomId:classroomEdit.classroomId,studentId:index})">Evaluez-le!</a>&nbsp;
+          <a ng-link="report({classroomId:classroomEdit.classroomId,studentId:index})">Consulter ses évaluations</a>
         </td>
       </tr>
 
