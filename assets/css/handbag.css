@@ -22,26 +22,25 @@ td.report-date {
 
 .traffic-light {
   background-color: #333333;
-  width: 320px;
+  width: 200px;
   height: 50px;
   border-radius: 10px;
 }
 
 .traffic-light input {
   appearance: none;
+  -webkit-appearance: none;
   width: 40px;
   height: 40px;
   background-color: grey;
   vertical-align: middle;
   border-radius: 100%;
+  margin-left: 5px;
+  margin-top: 5px;
 }
 
 .traffic-light input.color1 {
   background-color: #b30000;
-}
-
-.traffic-light input.color1:hover {
-  animation: blink1 1.1s step-end infinite;
 }
 
 .traffic-light input.color1:checked {
@@ -53,10 +52,6 @@ td.report-date {
   background-color: #b2b300;
 }
 
-.traffic-light input.color2:hover {
-  animation: blink2 1s step-end infinite;
-}
-
 .traffic-light input.color2:checked {
   background-color: #ffff00;
   box-shadow: 0 0 6em #ffff33;
@@ -66,42 +61,16 @@ td.report-date {
   background-color: #00b300;
 }
 
-.traffic-light input.color3:hover {
-  animation: blink3 1s step-end infinite;
-}
-
 .traffic-light input.color3:checked {
   background-color: #00ff00;
   box-shadow: 0 0 6em #33ff33;
 }
 
-@keyframes blink1 {
-  0% {
-    background-color: #ff0000;
-    box-shadow: 0 0 6em #ff3333;
-  }
-  50% {
-    background-color: #b30000;
-    box-shadow: 0 0 0em transparent;
-  }
+.traffic-light input.color4 {
+  background-color: #b3b3b3;
 }
-@keyframes blink2 {
-  0% {
-    background-color: #ffff00;
-    box-shadow: 0 0 6em #ffff33;
-  }
-  50% {
-    background-color: #b2b300;
-    box-shadow: 0 0 0em transparent;
-  }
-}
-@keyframes blink3 {
-  0% {
-    background-color: #00ff00;
-    box-shadow: 0 0 6em #33ff33;
-  }
-  50% {
-    background-color: #00b300;
-    box-shadow: 0 0 0em transparent;
-  }
+
+.traffic-light input.color4:checked {
+  background-color: #ffffff;
+  box-shadow: 0 0 6em #333333;
 }

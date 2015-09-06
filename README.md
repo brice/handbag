@@ -25,3 +25,8 @@
 
 * Les données sont stockées en local pour le moment. 
 * Un export/import de données devra être possible
+
+
+### Quelques références 
+
+* http://codepen.io/dervondenbergen/pen/jCqzl
