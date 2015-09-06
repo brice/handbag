@@ -9,22 +9,26 @@
       <form>
       <div class="form">
         <div class="row control-group">
-          <div class="form-group col-xs-12 floating-label-form-group controls">
+          <div class="form-group floating-label-form-group controls">
 
             <label>Date </label> 
             <input type="text" class="form-control" placeholder="Date de l'évaluation" ng-model="evaluation.date">
             <i class="fa fa-exclamation" ng-show="evaluation.error"></i>
             <i class="fa fa-check" ng-show="evaluation.check"></i>
           </div>
+          <div>
           <ul class="list-group">
             <li class="list-group-item clearfix task" ng-repeat="(index, skill) in evaluation.skills track by $index"> 
               {{skill.category}} - {{skill.libelle}}:
-                <input type="radio" ng-model="evaluation.color[index]" value="red"/><label>Rouge</label>
-                <input type="radio" ng-model="evaluation.color[index]" value="yellow"/><label>Jaune</label>
-                <input type="radio" ng-model="evaluation.color[index]" value="green"/><label>Vert </label>
-                <input type="radio" ng-model="evaluation.color[index]" value="na"/><label>Non évalué</label>
+              <div class="traffic-light">
+                <input type="radio" ng-model="evaluation.color[index]" class="color1" value="red"/>
+                <input type="radio" ng-model="evaluation.color[index]" class="color2" value="yellow"/>
+                <input type="radio" ng-model="evaluation.color[index]" class="color3" value="green"/>
+                <input type="radio" ng-model="evaluation.color[index]" class="color4" value="na"/>
+              </div>
             </li>
           </ul>
+          </div>
 
       <button type="button" ng-click="evaluation.saveEvaluation()">Enregistrer les évaluations</button> 
       <i class="fa fa-check" ng-show="evaluation.check"></i>

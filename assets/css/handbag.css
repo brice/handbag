@@ -1,0 +1,76 @@
+td.red {
+  background-color: #b30000;
+  width: 100%;
+  text-align: center;
+}
+
+td.yellow {
+  background-color: #ffff00;
+  width: 100%;
+  text-align: center;
+}
+
+td.green {
+  background-color: #00b300;
+  width: 100%;
+  text-align: center;
+}
+
+td.report-date {
+  text-align: center;
+}
+
+.traffic-light {
+  background-color: #333333;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.traffic-light input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 40px;
+  height: 40px;
+  background-color: grey;
+  vertical-align: middle;
+  border-radius: 100%;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.traffic-light input.color1 {
+  background-color: #b30000;
+}
+
+.traffic-light input.color1:checked {
+  background-color: #ff0000;
+  box-shadow: 0 0 6em #ff3333;
+}
+
+.traffic-light input.color2 {
+  background-color: #b2b300;
+}
+
+.traffic-light input.color2:checked {
+  background-color: #ffff00;
+  box-shadow: 0 0 6em #ffff33;
+}
+
+.traffic-light input.color3 {
+  background-color: #00b300;
+}
+
+.traffic-light input.color3:checked {
+  background-color: #00ff00;
+  box-shadow: 0 0 6em #33ff33;
+}
+
+.traffic-light input.color4 {
+  background-color: #b3b3b3;
+}
+
+.traffic-light input.color4:checked {
+  background-color: #ffffff;
+  box-shadow: 0 0 6em #333333;
+}
