@@ -1,3 +1,25 @@
+td.red {
+  background-color: #b30000;
+  width: 100%;
+  text-align: center;
+}
+
+td.yellow {
+  background-color: #ffff00;
+  width: 100%;
+  text-align: center;
+}
+
+td.green {
+  background-color: #00b300;
+  width: 100%;
+  text-align: center;
+}
+
+td.report-date {
+  text-align: center;
+}
+
 .traffic-light {
   background-color: #333333;
   width: 320px;

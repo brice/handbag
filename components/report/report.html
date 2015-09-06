@@ -1,19 +1,24 @@
+<div ng-include='"templates/header.html"'></div>
+<!-- Form Starts Here -->
+ <div class="container">
+    <div class="row">
+      <div class="col-md-12">
 
 
-<table>
-<tr>
-<td>
-</td>
-<td ng-repeat="date in report.date">
-{{ date}}
-</td>
-</tr>
-<tr ng-repeat="(key, skill) in report.skills">
-<td>{{ key }} {{ skill.category }} - {{ skill.libelle }}</td>
+		<table>
+		<tr>
+			<td>
+			</td>
+			<td ng-repeat="date in report.date" class="report-date">{{ date}}</td>
+		</tr>
+		<tr ng-repeat="(key, skill) in report.skills">
+			<td class="col-sm-5 col-md-6">{{ skill.category }} - {{ skill.libelle }}</td>
+			<td ng-repeat="evaluation in report.studentEvaluation" class="col-sm-5 col-md-6 {{evaluation.color[key]}}">
+				{{ evaluation.color[key] | libelleColor }}
+			</td>
+		</tr>
+		</table>
 
-
-<td ng-repeat="evaluation in report.studentEvaluation">
-<span color="evaluation.color[key]">{{ evaluation.color[key] | libelleColor }}</span>
-</td>
-</tr>
-</table>
+		</div>
+	</div>
+</div>
