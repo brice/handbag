@@ -6,8 +6,8 @@
 - [x] Création d'un composant classroom pour enregistrer une classe dans le LocalStorage
 - [x] Affichage de la liste des classes enregistrées.
 - [x] Affichage et édition d'une classe en particulier.
-- [x] Découpage des données pour afficher les élèves d'une classe
-- [ ] Export des données.
+- [x] Découpage des données pour afficher les élèves d'une classe
+- [ ] Export des données.
 - [ ] Import des données
 - [x] Création d'un module de compétences avec :
   - [x] affichage
