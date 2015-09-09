@@ -6,13 +6,16 @@
       
       <!-- Skills list starts Here -->
       <h2>Evaluation de {{evaluation.student}}</h2>
+      <p><a ng-link="classroomEdit({classroomId:evaluation.classroomId})">Retour à la liste des élèves</a></p>
+
       <form>
       <div class="form">
+
         <div class="row control-group">
           <div class="form-group floating-label-form-group controls">
 
             <label>Date </label> 
-            <input type="text" class="form-control" placeholder="Date de l'évaluation" ng-model="evaluation.date">
+            <input type="date" class="form-control" placeholder="Date de l'évaluation" ng-model="evaluation.date">
             <i class="fa fa-exclamation" ng-show="evaluation.error"></i>
             <i class="fa fa-check" ng-show="evaluation.check"></i>
           </div>

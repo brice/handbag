@@ -1,4 +1,7 @@
-angular.module('app.evaluation', [])
+
+(function(){
+
+angular.module('app.evaluation')
   .controller('EvaluationController', ['$routeParams', 'storageFactory', EvaluationController]);
 
 function EvaluationController($routeParams, storageFactory) {
@@ -50,3 +53,5 @@ EvaluationController.prototype.saveEvaluation = function() {
 	this.storageFactory.memorize('evaluations', evaluations)
 	this.check=true;
 }
+
+})(angular)

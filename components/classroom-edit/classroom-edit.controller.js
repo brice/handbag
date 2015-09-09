@@ -1,4 +1,6 @@
-angular.module('app.classroomEdit', [])
+(function(){
+
+angular.module('app.classroomEdit')
   .controller('ClassroomEditController', ['$routeParams', 'storageFactory', ClassroomEditController]);
 
 function ClassroomEditController($routeParams, storageFactory) {
@@ -9,3 +11,5 @@ function ClassroomEditController($routeParams, storageFactory) {
     this.students  = classrooms[$routeParams.classroomId];  
   }
 }
+
+})(angular)
