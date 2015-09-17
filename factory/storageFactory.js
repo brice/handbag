@@ -30,5 +30,12 @@ angular.module('app')
         }
         return false;
       }
+      dump: function() {
+        try{
+          return $window.localStorage.dump();
+        } catch (error) {
+          console.error(error, error.message)
+        }
+      }
     }
   }]);
