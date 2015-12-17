@@ -23,8 +23,10 @@
 </head>
 <body ng-app="app" ng-controller="AppController as app">
   <div ng-include='"templates/navbar.html"'></div> 
+    
+  <div ng-viewport="master"></div>
   
-  <div ng-viewport></div>
+  <div ng-viewport="detail"></div>
 
   <script src="./assets/libs/angular/angular.min.js"></script>
 
@@ -36,7 +38,8 @@
   <script src="./app/app.routes.js"></script>
 
   <script src="./components/home/home.js"></script>
-  <script src="./components/classroom/classroom.js"></script>
+  <script src="./components/classroom/classroom.module.js"></script>
+  <script src="./components/classroom/classroom.controller.js"></script>
   <script src="./components/classroom-edit/classroom-edit.module.js"></script>
   <script src="./components/classroom-edit/classroom-edit.controller.js"></script>
   
