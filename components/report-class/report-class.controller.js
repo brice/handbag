@@ -1,28 +1,36 @@
 (function(){
 
 angular.module('app.reportClass')
-  .controller('ReportClassController', ['$routeParams', 'storageFactory', 'studentFactory', ReportClassController]);
+  .controller('ReportClassController', ['$routeParams', 'storageFactory', ReportClassController]);
 
-function ReportClassController($routeParams, storageFactory, studentFactory) {
+function ReportClassController($routeParams, storageFactory) {
   vm = this;
 
   vm.classroomId = $routeParams.classroomId;
+  vm.evaluationId = $routeParams.evaluationId;
 
-  vm.student = studentFactory.getStudent(vm.classroomId, $routeParams.studentId);
-  if (false === vm.student) {
+  var classrooms = storageFactory.recall('classrooms', {});
+  vm.students = classrooms[vm.classroomId];
+  
+  var evaluations = storageFactory.recall('evaluations', {});
+  vm.evaluationsClass = evaluations[vm.classroomId];
+
+  if (false === vm.students) {
     return false;
   }
 
-  var classrooms = storageFactory.recall('classrooms');
-  this.skills = storageFactory.recall('skills', {});
+  var allSkills = storageFactory.recall('skills', {});
+  vm.skills = {};
 
-  var evaluations = storageFactory.recall('evaluations', {});
-
-  vm.studentEvaluation = evaluations[vm.classroomId][vm.studentId];
-
-  vm.date = vm.studentEvaluation.map(function(data) {
-  	return data.date
-  });
+  for (var studentId in evaluations[vm.classroomId]) {
+    studentEvaluations = evaluations[vm.classroomId][studentId][vm.evaluationId];
+    console.log(studentEvaluations);
+    for (var skillId in allSkills) {
+      if (studentEvaluations.color[skillId] != 'na') {
+        vm.skills[skillId] = allSkills[skillId];
+      }
+    }
+  }
 }
 
 })(angular)

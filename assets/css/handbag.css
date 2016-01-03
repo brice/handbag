@@ -20,6 +20,11 @@ td.report-date {
   text-align: center;
 }
 
+td.report-skills {
+  text-align: center;
+  width: 20%;  
+}
+
 .traffic-light {
   background-color: #333333;
   width: 200px;

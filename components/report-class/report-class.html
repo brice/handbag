@@ -2,21 +2,21 @@
 <!-- Form Starts Here -->
  <div class="container">
     <div class="row">
-      <div class="col-md-12">
-		<table>
-		<tr>
-			<td>
-			</td>
-			<td ng-repeat="date in report.date" class="report-date">{{ date | date:'dd/MM/yy'}}</td>
-		</tr>
-		<tr ng-repeat="(key, skill) in report.skills track by $index">
-			<td class="col-sm-5 col-md-6">{{ skill.category }} - {{ skill.libelle }}</td>
-			<td ng-repeat="evaluation in report.studentEvaluation" class="col-sm-5 col-md-6 {{evaluation.color[key]}}">
-				{{ evaluation.color[key] | libelleColor }}
-			</td>
-		</tr>
-		</table>
-
-		</div>
+        <div class="col-md-12">
+        <table>
+        <tr>
+            <td>
+            </td>
+            <td ng-repeat="skills in reportClass.skills" class="report-skills">{{ skills.category }} - {{ skills.libelle }}</td>
+        </tr>
+        <tr ng-repeat="(studentId, displayname) in reportClass.students track by $index">
+        <td> {{ displayname }}
+        </td>
+        <td ng-repeat="(skillId, skills) in reportClass.skills" class="report-skills {{ reportClass.evaluationsClass[studentId][reportClass.evaluationId].color[skillId] }}">
+            {{ reportClass.evaluationsClass[studentId][reportClass.evaluationId].color[skillId] | libelleColor}}
+        </td>
+        </tr>
+        </table>
+	   </div>
 	</div>
 </div>

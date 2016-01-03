@@ -7,6 +7,7 @@ angular.module('app', [
 	'app.skills',
 	'app.evaluation',
 	'app.report',
+  'app.reportClass'
 	])
   .controller('AppController', ['$router', AppController]);
 
