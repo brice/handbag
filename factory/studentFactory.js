@@ -9,6 +9,15 @@ angular.module('app')
           return false;
         }
         return student;
+      },
+      getStudents: function(classroomId) {
+        var classrooms = storageFactory.recall('classrooms', {});
+        var students = classrooms[classroomId];
+        
+        if (undefined == students) {
+          return false;
+        }
+        return students; 
       }
   	}
   }]);

@@ -1,0 +1,22 @@
+<div ng-include='"templates/header.html"'></div>
+<!-- Form Starts Here -->
+ <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+        <table>
+        <tr>
+            <td>
+            </td>
+            <td ng-repeat="skills in reportClass.skills" class="report-skills">{{ skills.category }} - {{ skills.libelle }}</td>
+        </tr>
+        <tr ng-repeat="(studentId, displayname) in reportClass.students track by $index">
+        <td> {{ displayname }}
+        </td>
+        <td ng-repeat="(skillId, skills) in reportClass.skills" class="report-skills {{ reportClass.evaluationsClass[studentId][reportClass.evaluationId].color[skillId] }}">
+            {{ reportClass.evaluationsClass[studentId][reportClass.evaluationId].color[skillId] | libelleColor}}
+        </td>
+        </tr>
+        </table>
+	   </div>
+	</div>
+</div>
