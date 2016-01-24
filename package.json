@@ -1,0 +1,40 @@
+{
+  "name": "handbag",
+  "version": "0.0.1",
+  "description": "This application intends to help teacher to evaluate students or pupils",
+  "main": "index.js",
+  "dependencies": {
+    "babel-preset-react": "^6.3.13",
+    "babelify": "^7.2.0",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
+    "react-redux": "^4.0.6",
+    "react-tools": "^0.13.3",
+    "redux": "^3.0.5"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "redux-devtools": "^3.0.1",
+    "watchify": "^3.7.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "watchify -t [ babelify --presets [ react ] ] src/main.js -o ./build/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brice/handbag.git"
+  },
+  "keywords": [
+    "education",
+    "educational",
+    "evaluation",
+    "react"
+  ],
+  "author": "Brice Favre",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brice/handbag/issues"
+  },
+  "homepage": "https://github.com/brice/handbag#readme"
+}
