@@ -1,8 +1,8 @@
 var React = require('react');
-var EvaluationList = require('./EvaluationList.js');
-var EvaluationForm = require('./EvaluationForm.js');
+var EvaluationList = require('../components/EvaluationList.js');
+var EvaluationForm = require('../components/EvaluationForm.js');
 
-var EvaluationBox = React.createClass({
+var AdminEvaluationBox = React.createClass({
   loadEvaluations: function(){
     if (window.Storage) {
       this.setState({data: []});
@@ -15,10 +15,10 @@ var EvaluationBox = React.createClass({
   handleEvaluationSubmit: function(evaluation){
     var evaluationsList = this.state.data;
     evaluation.id = Date.now();
-    var newEvaluations = evaluationsList.concat();
+    var newEvaluations = evaluationsList.concat(evaluation);
     this.setState({data: newEvaluations});
     if (window.Storage) {
-      window.localStorage.setItem('evaluationsIndex', window.JSON.stringify(value));
+      window.localStorage.setItem('evaluationsIndex', window.JSON.stringify(newEvaluations));
     } else {
       this.setState({data: evaluationsList});
     }
@@ -28,11 +28,11 @@ var EvaluationBox = React.createClass({
   },
   componentDidMount: function() {
     this.loadEvaluations();
-    setInterval(this.loadEvaluations, this.props.pollInterval)
+    // setInterval(this.loadEvaluations, this.props.pollInterval)
   },
   render: function() {
     return (
-      <div className="evaluationBox">
+      <div className="adminEvaluationBox">
         <h1>Evaluations</h1>
         <EvaluationList data={this.state.data}/>
         <EvaluationForm onEvaluationSubmit={this.handleEvaluationSubmit}/>
@@ -42,4 +42,4 @@ var EvaluationBox = React.createClass({
 });
 
 
-module.exports = EvaluationBox;
+module.exports = AdminEvaluationBox;

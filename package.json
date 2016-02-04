@@ -9,6 +9,7 @@
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
     "react-redux": "^4.0.6",
+    "react-router": "^1.0.3",
     "react-tools": "^0.13.3",
     "redux": "^3.0.5"
   },
@@ -19,7 +20,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "watchify -t ./src/index.js -o ./build/bundle.js"
+    "watch": "watchify -t [ babelify --presets [ react ] ] ./src/index.js -o ./build/bundle.js"
   },
   "repository": {
     "type": "git",

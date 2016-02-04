@@ -30,22 +30,34 @@ function EvaluationList(props) {
   );
 }
 
-function saveData(e) {
-  e.preventDefault();
-  console.log(e);
+var EvaluationState = {
+  title: '',
+  date: '',
+  saveTitle: function(e) {
+    console.log(e.target.value)
+  },
+  saveDate: function(e) {
+    console.log(e.target.value)
+  },
+  registerDate: function() {
+
+  }
 }
+
 
 function EvaluationForm(props) {
   return(
     <form className="commentForm">
       <label>Titre</label>
-      <input type="text" placeholder="Titre de l'évaluation" />
+      <input type="text" placeholder="Titre de l'évaluation" onChange={EvaluationState.saveTitle} value={EvaluationState.title}/>
       <label>Date</label>
-      <input type="date" placeholder="Date de l'évaluation" />
-      <input type="submit" value="Ajouter évaluation"  onSubmit={saveData}/>
+      <input type="date" placeholder="Date de l'évaluation" onChange={EvaluationState.saveDate} value={EvaluationState.date} />
+      <button value="Ajouter évaluation" onClick={EvaluationState.registerDate}/>
     </form>
   );  
 }
+
+
 
 function Evaluation(props) {
   return(

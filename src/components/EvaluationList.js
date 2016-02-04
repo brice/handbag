@@ -3,7 +3,6 @@ var Evaluation = require('./Evaluation.js');
 
 var EvaluationList = React.createClass({
   render: function() {
-    console.log(this.props.data);
     var evaluationNodes = this.props.data.map(function(evaluation) {
       return(
         <Evaluation title={evaluation.title} key={evaluation.id} date={evaluation.date} />
