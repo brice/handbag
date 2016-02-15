@@ -9,7 +9,6 @@ var browserHistory = require('react-router').browserHistory;
 var App = require('./components/App.js');
 var AdminEvaluationBox = require('./containers/AdminEvaluationBox.js');
 var Notation = require('./components/Notation.js');
-console.log(Notation);
 
 ReactDOM.render(
   <Router history={browserHistory}>
