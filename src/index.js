@@ -1,22 +1,21 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from 'react'
+import { render } from 'react-dom'
 
-var Router = require('react-router').Router;
-var Route = require('react-router').Router;
-var Link = require('react-router').Link;
-var browserHistory = require('react-router').browserHistory;
+import { Router, Route, Link, IndexRoute, browserHistory} from 'react-router'
 
-var App = require('./components/App.js');
-var AdminEvaluationBox = require('./containers/AdminEvaluationBox.js');
-var Notation = require('./components/Notation.js');
+import App from './components/App'
+import Evaluations from './components/Evaluations'
+import EvaluationsList from './containers/EvaluationsList'
+import Evaluation from './containers/Evaluation'
 
-ReactDOM.render(
+render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <Route path="adminEvaluation" component={AdminEvaluationBox} />
-      <Route path="notation" component={Notation} />
+      <Route path="evaluations" component={Evaluations}>
+        <IndexRoute component={EvaluationsList} />
+        <Route path=":classId/:date" component={Evaluation} />
+      </Route>
     </Route>
-
   </Router>,
   document.getElementById('content')
-);
+)
