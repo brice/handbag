@@ -1,5 +1,6 @@
 td {
   font-size: 12px;
+  -webkit-print-color-adjust: exact;
 }
 
 td.red {

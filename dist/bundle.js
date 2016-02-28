@@ -23217,11 +23217,6 @@ function App(props) {
     'div',
     { className: 'app' },
     _react2.default.createElement(_Navbar2.default, null),
-    _react2.default.createElement(
-      'h1',
-      null,
-      'App'
-    ),
     props.children
   );
 }
@@ -23287,7 +23282,6 @@ function Evaluations(props) {
   return _react2.default.createElement(
     'div',
     null,
-    'Evaluations',
     props.children
   );
 }
@@ -23362,7 +23356,7 @@ var Evaluation = function (_React$Component) {
 
     var infos = (0, _Evaluations.fetchByClassidAndDate)(id, date);
     var header = (0, _Evaluations.getCleanHeader)(infos);
-    console.log(infos);
+
     _this.state = {
       header: header,
       infos: infos
@@ -23381,8 +23375,7 @@ var Evaluation = function (_React$Component) {
           { key: head.key },
           head.category,
           ' ',
-          head.libelle,
-          ' '
+          head.libelle
         );
       });
 
@@ -23410,11 +23403,8 @@ var Evaluation = function (_React$Component) {
           _react2.default.createElement(
             'td',
             null,
-            ' ',
-            info.student,
-            ' '
+            info.student
           ),
-          ' ',
           lineCols
         );
       });
@@ -23422,6 +23412,8 @@ var Evaluation = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
+        this.props.params.classId,
+        ' -',
         _react2.default.createElement(
           'table',
           null,

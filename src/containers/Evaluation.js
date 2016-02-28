@@ -11,7 +11,7 @@ class Evaluation extends React.Component {
 
     const infos = fetchByClassidAndDate(id, date)
     const header = getCleanHeader(infos)
-    console.log(infos)
+
     this.state = {
       header: header,
       infos: infos
@@ -20,7 +20,7 @@ class Evaluation extends React.Component {
 
   render() {
     const headerCols = this.state.header.map((head) => {
-      return <td key={head.key}>{ head.category } {head.libelle} </td>
+      return <td key={head.key}>{ head.category } {head.libelle}</td>
     })
 
     const headerTable = <tr><td></td>{headerCols}</tr>
@@ -31,12 +31,12 @@ class Evaluation extends React.Component {
         return <td className={"report-skills " + info.color[head.key]} key={head.key}> {libelle}</td>
       })
  
-      return <tr key={key}><td> { info.student } </td> {lineCols}
-      </tr>
+      return <tr key={key}><td>{ info.student }</td>{lineCols}</tr>
     })
 
     return (
       <div>
+        {this.props.params.classId} - 
         <table>
           <thead>
           {headerTable}
