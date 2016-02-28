@@ -1,6 +1,20 @@
 
 ## Projet simple de liaison entre compétences, évaluations et classes.
 
+### Refactoring du projet
+
+Ce projet a tout d'abord été basé sur le nouveau système de composant Angular. La majeure partie du code se base dessus et est déjà utilisable.
+
+Le projet est en cours de réécriture sous ReactJS/Redux, pour le tester executer les commandes suivantes :
+
+```
+# npm install 
+
+# npm run watch
+```
+
+Pointez ensuite votre navigateur sur le fichier react.html (serveur non encore intégré).
+
 ### Liste des features 
 
 - [x] Création d'un composant classroom pour enregistrer une classe dans le LocalStorage

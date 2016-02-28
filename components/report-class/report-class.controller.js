@@ -25,10 +25,14 @@ function ReportClassController($routeParams, storageFactory) {
   for (var studentId in evaluations[vm.classroomId]) {
     studentEvaluations = evaluations[vm.classroomId][studentId][vm.evaluationId];
     console.log(studentEvaluations);
-    for (var skillId in allSkills) {
-      if (studentEvaluations.color[skillId] != 'na') {
-        vm.skills[skillId] = allSkills[skillId];
+    if (undefined != studentEvaluations) {
+      for (var skillId in allSkills) {
+        if (studentEvaluations.color[skillId] != 'na') {
+          vm.skills[skillId] = allSkills[skillId];
+        }
       }
+    } else {
+      console.log(studentId);
     }
   }
 }
