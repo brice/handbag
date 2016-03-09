@@ -1,4 +1,6 @@
-angular.module('app.classroom', [])
+(function(){
+
+angular.module('app.classroom')
   .controller('ClassroomController', ['storageFactory', ClassroomController]);
 
 function ClassroomController(storageFactory) {
@@ -20,3 +22,5 @@ ClassroomController.prototype.save = function() {
   
   this.storageFactory.memorize('classrooms', this.classrooms);
 };
+
+})(angular)

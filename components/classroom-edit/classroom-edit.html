@@ -1,22 +1,21 @@
-<div ng-include='"templates/header.html"'></div>
 <!-- Main Content -->
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       
       <!-- Classroom Starts Here -->
+      
       <h2>Liste des élèves de {{classroomEdit.classroomId}}</h2>
 
       <table class="list-group">
       <tr ng-repeat="(index, value) in classroomEdit.students track by $index" class="list-group-item clearfix task">
-        <td>{{value}}&nbsp;</td>
-        <td>
+        <td class="col-md-5">{{value}}&nbsp;</td>
+        <td class="col-md-5">
           <a ng-link="evaluation({classroomId:classroomEdit.classroomId,studentId:index})">Evaluez-le!</a>&nbsp;
           <a ng-link="report({classroomId:classroomEdit.classroomId,studentId:index})">Consulter ses évaluations</a>
         </td>
       </tr>
       </table>
-      <a ng-link="classroom">Retour à la liste des classes</a>
 
       <!-- Classrom Ends Here -->
       
